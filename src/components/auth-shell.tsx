@@ -35,7 +35,7 @@ export function AuthShell({
             <p className="mt-1.5 text-sm text-white/50">{sub}</p>
           </div>
         </div>
-        <div className="mt-7 rounded-(--radius-card) border border-white/10 bg-white/[0.05] p-6 shadow-2xl backdrop-blur-xl sm:p-7">
+        <div className="auth-form-card mt-7 rounded-(--radius-card) border border-white/10 bg-white/[0.05] p-6 shadow-2xl backdrop-blur-xl sm:p-7">
           {children}
           {footer && (
             <div className="mt-6 border-t border-white/10 pt-5 text-center">{footer}</div>

@@ -19,7 +19,13 @@ export default async function StudentLayout({
 }) {
   const session = await requirePageRole("STUDENT");
   return (
-    <AppShell session={session} roleLabel="Student" items={NAV_ITEMS} home="/student">
+    <AppShell
+      session={session}
+      roleLabel="Student"
+      items={NAV_ITEMS}
+      home="/student"
+      variant="student"
+    >
       {children}
     </AppShell>
   );

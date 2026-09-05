@@ -180,6 +180,19 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Auth forms sit on a dark card, unlike the light surfaces used elsewhere. */
+.auth-form-card .auth-field-label:not(.text-red-ink) {
+  color: #f5f3ff !important;
+}
+.auth-form-card .auth-field-control {
+  color: #1a1430 !important;
+  background-color: #ffffff !important;
+}
+.auth-form-card .auth-field-control::placeholder {
+  color: #6b5c8a !important;
+  opacity: 1;
+}
+
 /* ---- Type scale (Figtree) ----------------------------------------------- */
 .t-display {
   font-weight: 700;
@@ -473,4 +486,137 @@ body {
   .aurora-bg::before {
     animation: none;
   }
+}
+
+/* Student workspace: a brighter, calmer canvas distinct from staff tools. */
+.student-workspace {
+  background: #f4f6ff;
+  color: #17213d;
+}
+.student-workspace main {
+  background:
+    radial-gradient(circle at 88% 4%, rgba(213, 222, 255, 0.58), transparent 28rem),
+    #f4f6ff;
+}
+.student-workspace .aurora-bg,
+.student-workspace .aurora-bg::before {
+  background: transparent;
+  animation: none;
+}
+.student-workspace .t-meta {
+  color: #7d88a5;
+}
+.student-workspace .t-h2,
+.student-workspace .t-h3,
+.student-workspace .t-body,
+.student-workspace .t-figure {
+  color: #17213d;
+}
+.student-workspace aside nav a[aria-current="page"] {
+  background: #eef0ff;
+  border-radius: 12px;
+}
+.student-workspace aside nav a[aria-current="page"] svg {
+  color: #5b62db !important;
+}
+.student-workspace aside nav a[aria-current="page"] span {
+  color: #5961d7 !important;
+}
+.student-workspace aside nav a:not([aria-current="page"]) svg {
+  color: #707b99 !important;
+}
+.student-workspace aside nav a:not([aria-current="page"]) span {
+  color: #53607d !important;
+}
+.student-workspace aside a[aria-label="MindSpace home"] > span:last-child {
+  color: #17213d !important;
+}
+.student-workspace aside nav a > span:first-child {
+  background: transparent !important;
+  border: 0 !important;
+}
+.student-workspace > nav[aria-label="Main"] {
+  border-color: #e5e9f6 !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+}
+.student-workspace > nav[aria-label="Main"] svg {
+  color: #8992ad !important;
+}
+.student-workspace > nav[aria-label="Main"] a[aria-current="page"] svg,
+.student-workspace > nav[aria-label="Main"] a[aria-current="page"] span {
+  color: #5b62db !important;
+}
+.student-workspace > nav[aria-label="Main"] a > span:first-child {
+  background: #5b62db !important;
+}
+.student-workspace .student-dashboard-card {
+  border: 1px solid #e9ecf7;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 12px 30px rgba(94, 106, 155, 0.08);
+}
+.student-workspace .student-dashboard-card:hover {
+  box-shadow: 0 16px 34px rgba(94, 106, 155, 0.12);
+}
+.student-workspace .student-action-card {
+  min-height: 190px;
+  padding: 1.5rem;
+  border-color: transparent;
+}
+.student-workspace .student-action-card-blue {
+  background: linear-gradient(145deg, #f2f6ff 0%, #e5eeff 100%);
+}
+.student-workspace .student-action-card-sky {
+  background: linear-gradient(145deg, #f1fbfd 0%, #e0f3f7 100%);
+}
+.student-workspace .student-mood-card {
+  border: 1px solid #e6e8ff;
+  background: linear-gradient(100deg, #ffffff 0%, #f4f3ff 100%);
+  box-shadow: 0 12px 28px rgba(94, 106, 155, 0.07);
+}
+
+@media (max-width: 639px) {
+  .student-workspace .student-hero {
+    min-height: 166px;
+  }
+  .student-workspace .student-leaf {
+    right: -34px;
+    top: -10px;
+    width: 185px;
+    height: 155px;
+    opacity: 0.58;
+  }
+  .student-workspace .student-mood-card {
+    padding: 1.15rem;
+  }
+}
+.student-workspace .student-hero {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(255, 251, 223, 0.9), transparent 11rem),
+    linear-gradient(105deg, #f7f8ff 0%, #edf2ff 58%, #e7efff 100%);
+}
+.student-workspace .student-leaf {
+  position: absolute;
+  pointer-events: none;
+  filter: drop-shadow(0 12px 12px rgba(104, 126, 171, 0.1));
+}
+.student-workspace .student-mood-card {
+  background:
+    radial-gradient(circle at 8% 50%, rgba(229, 225, 255, 0.72), transparent 8rem),
+    linear-gradient(100deg, #ffffff 0%, #f4f3ff 100%);
+}
+.student-workspace .student-dashboard > div > div:first-child .student-dashboard-card {
+  background: linear-gradient(135deg, #fffdf5 0%, #fff9ea 100%);
+}
+.student-workspace .student-dashboard > div > div:last-child .student-dashboard-card:last-of-type {
+  background: linear-gradient(135deg, #ffffff 0%, #f2f5ff 100%);
+}
+.student-workspace .student-dashboard .student-action-card {
+  min-height: 190px;
+  padding: 1.5rem;
+}
+.student-workspace .student-dashboard .student-action-card-blue {
+  background: linear-gradient(145deg, #f2f6ff 0%, #e5eeff 100%) !important;
+}
+.student-workspace .student-dashboard .student-action-card-sky {
+  background: linear-gradient(145deg, #f1fbfd 0%, #e0f3f7 100%) !important;
 }

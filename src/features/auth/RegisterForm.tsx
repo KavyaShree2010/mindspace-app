@@ -23,29 +23,33 @@ export function RegisterForm({ departments }: { departments: string[] }) {
 
   async function onSubmit(values: RegisterInput) {
     setFormError(null);
-    const res = await fetch("/api/auth/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values),
-    });
-    const body = await res.json().catch(() => null);
-    if (!res.ok || !body?.success) {
-      if (body?.errors) {
-        for (const [field, messages] of Object.entries(body.errors)) {
-          setError(field as Path<RegisterInput>, {
-            message: (messages as string[])[0],
-          });
+    try {
+      const res = await fetch("/api/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      const body = await res.json().catch(() => null);
+      if (!res.ok || !body?.success) {
+        if (body?.errors) {
+          for (const [field, messages] of Object.entries(body.errors)) {
+            setError(field as Path<RegisterInput>, {
+              message: (messages as string[])[0],
+            });
+          }
+        } else if (/email/i.test(body?.message ?? "")) {
+          setError("email", { message: body.message });
+        } else if (/register number/i.test(body?.message ?? "")) {
+          setError("registerNumber", { message: body.message });
+        } else {
+          setFormError(body?.message ?? "Couldn't create your account. Try again.");
         }
-      } else if (/email/i.test(body?.message ?? "")) {
-        setError("email", { message: body.message });
-      } else if (/register number/i.test(body?.message ?? "")) {
-        setError("registerNumber", { message: body.message });
-      } else {
-        setFormError(body?.message ?? "Couldn't create your account. Try again.");
+        return;
       }
-      return;
+      router.push("/login?registered=1");
+    } catch {
+      setFormError("We couldn't reach the server. Check your connection and try again.");
     }
-    router.push("/login?registered=1");
   }
 
   return (

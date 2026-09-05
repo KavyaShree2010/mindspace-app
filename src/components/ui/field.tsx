@@ -27,7 +27,7 @@ export function FieldWrapper({
     <div className="flex flex-col gap-1.5">
       <label
         htmlFor={htmlFor}
-        className={`text-sm font-semibold ${error ? "text-red-ink" : "text-ink"}`}
+        className={`auth-field-label text-sm font-semibold ${error ? "text-red-ink" : "text-ink"}`}
       >
         {label}
       </label>
@@ -64,7 +64,7 @@ export function InputField({ label, id, error, hint, ...props }: InputFieldProps
       <input
         id={id}
         aria-invalid={!!error}
-        className={inputClasses(!!error)}
+        className={`auth-field-control ${inputClasses(!!error)}`}
         {...props}
       />
     </FieldWrapper>
@@ -92,7 +92,7 @@ export function TextareaField({
         id={id}
         rows={rows}
         aria-invalid={!!error}
-        className={`${inputClasses(!!error)} resize-y leading-relaxed`}
+        className={`auth-field-control ${inputClasses(!!error)} resize-y leading-relaxed`}
         {...props}
       />
     </FieldWrapper>
@@ -120,7 +120,7 @@ export function SelectField({
       <select
         id={id}
         aria-invalid={!!error}
-        className={inputClasses(!!error)}
+        className={`auth-field-control ${inputClasses(!!error)}`}
         {...props}
       >
         {children}

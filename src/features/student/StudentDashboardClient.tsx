@@ -176,6 +176,30 @@ function initials(name: string): string {
     .join("");
 }
 
+function BotanicalSprig({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 220 180"
+      className={className}
+      aria-hidden="true"
+      fill="none"
+    >
+      <path
+        d="M177 178C172 132 158 91 111 36"
+        stroke="#91a5c6"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path d="M145 105c-22 0-34-13-38-31 20 1 34 11 38 31Z" fill="#d4dff2" />
+      <path d="M129 83c-20-5-29-18-27-35 18 4 28 16 27 35Z" fill="#c0d1ea" />
+      <path d="M158 132c19-4 29-16 29-32-18 4-27 15-29 32Z" fill="#dbe5f4" />
+      <path d="M148 111c18 0 31-9 36-24-18-2-31 6-36 24Z" fill="#b9cce7" />
+      <path d="M117 59c-14-7-20-18-17-31 14 4 21 14 17 31Z" fill="#dbe5f4" />
+      <path d="M165 91c14-3 23-12 24-25-14 2-23 10-24 25Z" fill="#c7d7ed" />
+    </svg>
+  );
+}
+
 /* -------------------------------------------------------------------------- */
 /*  Main component                                                            */
 /* -------------------------------------------------------------------------- */
@@ -192,7 +216,7 @@ export function StudentDashboardClient({
 }: StudentDashboardClientProps) {
   return (
     <motion.div
-      className="flex flex-col gap-5"
+      className="student-dashboard flex flex-col gap-7"
       variants={stagger}
       initial="hidden"
       animate="show"
@@ -200,13 +224,19 @@ export function StudentDashboardClient({
       {/* ---- Hero greeting ---- */}
       <motion.header
         variants={fadeIn}
-        className="aurora-bg rounded-(--radius-card) p-6 shadow-(--shadow-card) sm:p-8"
+        className="student-hero aurora-bg relative min-h-[180px] overflow-hidden rounded-[22px] px-1 py-1 sm:min-h-[196px] sm:px-2"
       >
-        <p className="t-meta">{todayLabel}</p>
-        <h1 className="mt-2 text-3xl font-bold tracking-[-0.03em] sm:text-4xl">
-          Hello,{" "}
-          <span className="gradient-text">{firstName}</span>
-        </h1>
+        <div className="relative z-10 max-w-[700px] pt-5 sm:pt-8">
+          <p className="t-meta">{todayLabel}</p>
+          <h1 className="mt-2 text-4xl font-bold tracking-[-0.04em] text-[#17213d] sm:text-5xl">
+            Hello,{" "}
+            <span className="gradient-text">{firstName}</span>
+          </h1>
+          <p className="mt-3 max-w-[620px] text-base leading-relaxed text-[#697594] sm:text-lg">
+            A healthier mind leads to a brighter you. Take a moment for yourself today.
+          </p>
+        </div>
+        <BotanicalSprig className="student-leaf absolute -right-2 top-0 h-[175px] w-[210px] opacity-80 sm:right-8 sm:top-0 sm:h-[220px] sm:w-[270px]" />
       </motion.header>
 
       {isNewUser && (
@@ -216,8 +246,8 @@ export function StudentDashboardClient({
       )}
 
       {/* ---- Mood card ---- */}
-      <motion.div variants={fadeUp}>
-        <div className="relative overflow-hidden rounded-(--radius-card) bg-brand-tint p-6 shadow-(--shadow-card) sm:p-7">
+      <motion.div variants={fadeUp} className="relative z-20 -mt-5 sm:-mt-7">
+        <div className="student-mood-card relative overflow-hidden rounded-[18px] p-6 sm:p-7">
           <span
             aria-hidden
             className="pointer-events-none absolute -right-16 -top-20 h-56 w-56 rounded-full bg-brand-light/[0.14]"
@@ -267,7 +297,7 @@ export function StudentDashboardClient({
               </div>
               <Link
                 href="/student/mood"
-                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-btn) bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-(--shadow-btn) transition-colors hover:bg-brand-hover"
+                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-[10px] bg-[#5d5be7] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_8px_18px_rgba(93,91,231,0.22)] transition-colors hover:bg-[#4d4bd3]"
               >
                 <SmileIcon className="h-[1.15rem] w-[1.15rem]" />
                 Log My Mood
@@ -278,13 +308,13 @@ export function StudentDashboardClient({
       </motion.div>
 
       {/* ---- Two-column body ---- */}
-      <div className="grid grid-cols-1 gap-5 lg:grid-cols-[1.35fr_1fr] lg:items-start">
+      <div className="grid grid-cols-1 gap-5 lg:grid-cols-[1.08fr_1fr] lg:items-stretch">
         {/* Left column */}
         <div className="flex flex-col gap-5">
           {/* Upcoming appointment */}
           <motion.div variants={fadeUp}>
             {upcoming ? (
-              <Card tone="gold">
+              <Card tone="gold" className="student-dashboard-card min-h-[250px]">
                 <div className="flex items-center gap-2 text-gold-ink">
                   <CalendarIcon className="h-[1.15rem] w-[1.15rem]" />
                   <h2 className="t-h3">Upcoming Appointment</h2>
@@ -361,7 +391,7 @@ export function StudentDashboardClient({
                   ) : null)}
               </Card>
             ) : (
-              <Card tone="gold">
+              <Card tone="gold" className="student-dashboard-card min-h-[250px]">
                 <div className="flex items-center gap-2 text-gold-ink">
                   <CalendarIcon className="h-[1.15rem] w-[1.15rem]" />
                   <h2 className="t-h3">No upcoming appointment</h2>
@@ -384,17 +414,17 @@ export function StudentDashboardClient({
           {/* Quick-action tiles — 3D tilt */}
           <motion.div
             variants={fadeUp}
-            className="grid grid-cols-2 gap-5"
+            className="grid grid-cols-1 gap-5 sm:grid-cols-2"
           >
             <TiltTile
               href="/student/appointments/new"
-              className="group rounded-(--radius-card) border border-line bg-surface shadow-(--shadow-card) transition-shadow hover:shadow-(--shadow-card-hover)"
+              className="student-dashboard-card student-action-card student-action-card-blue group rounded-[16px] transition-shadow"
             >
-              <span className="grid h-11 w-11 place-items-center rounded-[14px] bg-brand-tint text-brand-ink">
+              <span className="grid h-14 w-14 place-items-center rounded-[16px] bg-[#dce9ff] text-[#4d6fd8]">
                 <UsersIcon className="h-6 w-6" />
               </span>
               <span className="flex items-end justify-between gap-2">
-                <span className="text-lg font-bold leading-tight text-ink-strong">
+                <span className="text-xl font-bold leading-tight text-ink-strong">
                   Book a session
                 </span>
                 <ArrowRightIcon className="h-5 w-5 text-brand-ink transition-transform group-hover:translate-x-0.5" />
@@ -403,13 +433,13 @@ export function StudentDashboardClient({
 
             <TiltTile
               href="/student/journal"
-              className="group rounded-(--radius-card) border border-line bg-surface shadow-(--shadow-card) transition-shadow hover:shadow-(--shadow-card-hover)"
+              className="student-dashboard-card student-action-card student-action-card-sky group rounded-[16px] transition-shadow"
             >
-              <span className="grid h-11 w-11 place-items-center rounded-[14px] bg-gold text-gold-ink">
+              <span className="grid h-14 w-14 place-items-center rounded-[16px] bg-[#d8f0f3] text-[#32899a]">
                 <JournalIcon className="h-6 w-6" />
               </span>
               <span className="flex items-end justify-between gap-2">
-                <span className="text-lg font-bold leading-tight text-ink-strong">
+                <span className="text-xl font-bold leading-tight text-ink-strong">
                   Journal
                 </span>
                 <ArrowRightIcon className="h-5 w-5 text-brand-ink transition-transform group-hover:translate-x-0.5" />
@@ -422,7 +452,7 @@ export function StudentDashboardClient({
         <div className="flex flex-col gap-5">
           {/* Affirmation quote panel */}
           <motion.div variants={fadeUp}>
-            <div className="relative overflow-hidden rounded-(--radius-card) bg-brand-tint p-5 shadow-(--shadow-card)">
+            <div className="student-dashboard-card relative min-h-[250px] overflow-hidden rounded-[16px] p-5">
               <span
                 aria-hidden
                 className="pointer-events-none absolute -top-6 right-2 font-serif text-[7rem] leading-none text-brand-light/25"
@@ -438,7 +468,7 @@ export function StudentDashboardClient({
 
           {/* Available counsellors */}
           <motion.div variants={fadeUp}>
-            <Card>
+            <Card className="student-dashboard-card min-h-[250px]">
               <div className="flex items-center gap-2">
                 <span
                   className="h-2 w-2 rounded-full bg-brand-light breathe"
