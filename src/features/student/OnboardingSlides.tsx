@@ -40,7 +40,7 @@ const STUDENT_SLIDES = [
     icon: JournalIcon,
     gradient: "from-pink to-pink/60",
     title: "Write freely",
-    body: "A private journal that belongs to you alone. Nobody else can read it — not your counsellor, not anyone.",
+    body: "A journal for your account. Access is limited by the institution's configured roles and the Privacy Policy.",
     href: "/student/journal",
     cta: "Start writing",
   },

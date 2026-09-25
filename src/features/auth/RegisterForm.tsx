@@ -140,6 +140,25 @@ export function RegisterForm({ departments }: { departments: string[] }) {
         error={errors.confirmPassword?.message}
         {...register("confirmPassword")}
       />
+      <div className="flex flex-col gap-3 rounded-(--radius-input) border border-line bg-sunken px-3.5 py-3">
+        <label className="flex items-start gap-3 text-sm text-ink-secondary">
+          <input type="checkbox" className="mt-1 h-4 w-4 accent-brand" {...register("termsAccepted")} />
+          <span>
+            I agree to the <a href="/terms" target="_blank" rel="noreferrer" className="font-semibold text-brand-ink underline">Terms and Conditions</a>.
+          </span>
+        </label>
+        <label className="flex items-start gap-3 text-sm text-ink-secondary">
+          <input type="checkbox" className="mt-1 h-4 w-4 accent-brand" {...register("privacyAccepted")} />
+          <span>
+            I have read the <a href="/privacy" target="_blank" rel="noreferrer" className="font-semibold text-brand-ink underline">Privacy Policy</a> and understand how necessary data is used.
+          </span>
+        </label>
+        {(errors.termsAccepted || errors.privacyAccepted) && (
+          <p role="alert" className="text-xs font-semibold text-red-ink">
+            {errors.termsAccepted?.message ?? errors.privacyAccepted?.message}
+          </p>
+        )}
+      </div>
       {formError && (
         <p
           role="alert"

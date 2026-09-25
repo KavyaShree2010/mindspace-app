@@ -21,6 +21,9 @@ export async function POST(request: Request) {
         name: input.name,
         email,
         password: await bcrypt.hash(input.password, HASH_ROUNDS),
+        termsAcceptedAt: new Date(),
+        privacyAcceptedAt: new Date(),
+        consentVersion: "2026-09-25",
         role: "STUDENT",
         department: {
           connectOrCreate: {

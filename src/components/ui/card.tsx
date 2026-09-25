@@ -105,7 +105,7 @@ export function AvatarStack({
           title={person.name}
         >
           {person.imageUrl ? (
-            <img src={person.imageUrl} alt="" className="h-full w-full object-cover" />
+            <img src={person.imageUrl} alt={person.name} className="h-full w-full object-cover" />
           ) : (
             person.name.slice(0, 2).toUpperCase()
           )}

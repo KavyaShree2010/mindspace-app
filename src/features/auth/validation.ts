@@ -34,6 +34,8 @@ export const registerSchema = z
       .trim()
       .regex(/^[+\d][\d\s-]{6,17}$/, "Please enter a valid phone number")
       .optional(),
+    termsAccepted: z.literal(true, "Please accept the Terms and Conditions"),
+    privacyAccepted: z.literal(true, "Please acknowledge the Privacy Policy"),
   })
   .refine((data) => data.password === data.confirmPassword, {
     path: ["confirmPassword"],

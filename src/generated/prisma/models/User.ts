@@ -34,6 +34,9 @@ export type UserMinAggregateOutputType = {
   departmentId: string | null
   createdAt: Date | null
   updatedAt: Date | null
+  termsAcceptedAt: Date | null
+  privacyAcceptedAt: Date | null
+  consentVersion: string | null
 }
 
 export type UserMaxAggregateOutputType = {
@@ -46,6 +49,9 @@ export type UserMaxAggregateOutputType = {
   departmentId: string | null
   createdAt: Date | null
   updatedAt: Date | null
+  termsAcceptedAt: Date | null
+  privacyAcceptedAt: Date | null
+  consentVersion: string | null
 }
 
 export type UserCountAggregateOutputType = {
@@ -58,6 +64,9 @@ export type UserCountAggregateOutputType = {
   departmentId: number
   createdAt: number
   updatedAt: number
+  termsAcceptedAt: number
+  privacyAcceptedAt: number
+  consentVersion: number
   _all: number
 }
 
@@ -72,6 +81,9 @@ export type UserMinAggregateInputType = {
   departmentId?: true
   createdAt?: true
   updatedAt?: true
+  termsAcceptedAt?: true
+  privacyAcceptedAt?: true
+  consentVersion?: true
 }
 
 export type UserMaxAggregateInputType = {
@@ -84,6 +96,9 @@ export type UserMaxAggregateInputType = {
   departmentId?: true
   createdAt?: true
   updatedAt?: true
+  termsAcceptedAt?: true
+  privacyAcceptedAt?: true
+  consentVersion?: true
 }
 
 export type UserCountAggregateInputType = {
@@ -96,6 +111,9 @@ export type UserCountAggregateInputType = {
   departmentId?: true
   createdAt?: true
   updatedAt?: true
+  termsAcceptedAt?: true
+  privacyAcceptedAt?: true
+  consentVersion?: true
   _all?: true
 }
 
@@ -181,6 +199,9 @@ export type UserGroupByOutputType = {
   departmentId: string | null
   createdAt: Date
   updatedAt: Date
+  termsAcceptedAt: Date | null
+  privacyAcceptedAt: Date | null
+  consentVersion: string | null
   _count: UserCountAggregateOutputType | null
   _min: UserMinAggregateOutputType | null
   _max: UserMaxAggregateOutputType | null
@@ -214,6 +235,9 @@ export type UserWhereInput = {
   departmentId?: Prisma.StringNullableFilter<"User"> | string | null
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
+  termsAcceptedAt?: Prisma.DateTimeNullableFilter<"User"> | Date | string | null
+  privacyAcceptedAt?: Prisma.DateTimeNullableFilter<"User"> | Date | string | null
+  consentVersion?: Prisma.StringNullableFilter<"User"> | string | null
   department?: Prisma.XOR<Prisma.DepartmentNullableScalarRelationFilter, Prisma.DepartmentWhereInput> | null
   studentProfile?: Prisma.XOR<Prisma.StudentProfileNullableScalarRelationFilter, Prisma.StudentProfileWhereInput> | null
   counsellorProfile?: Prisma.XOR<Prisma.CounsellorProfileNullableScalarRelationFilter, Prisma.CounsellorProfileWhereInput> | null
@@ -241,6 +265,9 @@ export type UserOrderByWithRelationInput = {
   departmentId?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  termsAcceptedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  privacyAcceptedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  consentVersion?: Prisma.SortOrderInput | Prisma.SortOrder
   department?: Prisma.DepartmentOrderByWithRelationInput
   studentProfile?: Prisma.StudentProfileOrderByWithRelationInput
   counsellorProfile?: Prisma.CounsellorProfileOrderByWithRelationInput
@@ -271,6 +298,9 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   departmentId?: Prisma.StringNullableFilter<"User"> | string | null
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
+  termsAcceptedAt?: Prisma.DateTimeNullableFilter<"User"> | Date | string | null
+  privacyAcceptedAt?: Prisma.DateTimeNullableFilter<"User"> | Date | string | null
+  consentVersion?: Prisma.StringNullableFilter<"User"> | string | null
   department?: Prisma.XOR<Prisma.DepartmentNullableScalarRelationFilter, Prisma.DepartmentWhereInput> | null
   studentProfile?: Prisma.XOR<Prisma.StudentProfileNullableScalarRelationFilter, Prisma.StudentProfileWhereInput> | null
   counsellorProfile?: Prisma.XOR<Prisma.CounsellorProfileNullableScalarRelationFilter, Prisma.CounsellorProfileWhereInput> | null
@@ -298,6 +328,9 @@ export type UserOrderByWithAggregationInput = {
   departmentId?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  termsAcceptedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  privacyAcceptedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  consentVersion?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.UserCountOrderByAggregateInput
   _max?: Prisma.UserMaxOrderByAggregateInput
   _min?: Prisma.UserMinOrderByAggregateInput
@@ -316,6 +349,9 @@ export type UserScalarWhereWithAggregatesInput = {
   departmentId?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
+  termsAcceptedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
+  privacyAcceptedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
+  consentVersion?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
 }
 
 export type UserCreateInput = {
@@ -327,6 +363,9 @@ export type UserCreateInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   department?: Prisma.DepartmentCreateNestedOneWithoutUsersInput
   studentProfile?: Prisma.StudentProfileCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileCreateNestedOneWithoutUserInput
@@ -354,6 +393,9 @@ export type UserUncheckedCreateInput = {
   departmentId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   studentProfile?: Prisma.StudentProfileUncheckedCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedCreateNestedOneWithoutUserInput
   studentAppointments?: Prisma.AppointmentUncheckedCreateNestedManyWithoutStudentInput
@@ -379,6 +421,9 @@ export type UserUpdateInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   department?: Prisma.DepartmentUpdateOneWithoutUsersNestedInput
   studentProfile?: Prisma.StudentProfileUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUpdateOneWithoutUserNestedInput
@@ -406,6 +451,9 @@ export type UserUncheckedUpdateInput = {
   departmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   studentProfile?: Prisma.StudentProfileUncheckedUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedUpdateOneWithoutUserNestedInput
   studentAppointments?: Prisma.AppointmentUncheckedUpdateManyWithoutStudentNestedInput
@@ -432,6 +480,9 @@ export type UserCreateManyInput = {
   departmentId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
 }
 
 export type UserUpdateManyMutationInput = {
@@ -443,6 +494,9 @@ export type UserUpdateManyMutationInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type UserUncheckedUpdateManyInput = {
@@ -455,6 +509,9 @@ export type UserUncheckedUpdateManyInput = {
   departmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type UserListRelationFilter = {
@@ -477,6 +534,9 @@ export type UserCountOrderByAggregateInput = {
   departmentId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  termsAcceptedAt?: Prisma.SortOrder
+  privacyAcceptedAt?: Prisma.SortOrder
+  consentVersion?: Prisma.SortOrder
 }
 
 export type UserMaxOrderByAggregateInput = {
@@ -489,6 +549,9 @@ export type UserMaxOrderByAggregateInput = {
   departmentId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  termsAcceptedAt?: Prisma.SortOrder
+  privacyAcceptedAt?: Prisma.SortOrder
+  consentVersion?: Prisma.SortOrder
 }
 
 export type UserMinOrderByAggregateInput = {
@@ -501,6 +564,9 @@ export type UserMinOrderByAggregateInput = {
   departmentId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  termsAcceptedAt?: Prisma.SortOrder
+  privacyAcceptedAt?: Prisma.SortOrder
+  consentVersion?: Prisma.SortOrder
 }
 
 export type UserScalarRelationFilter = {
@@ -561,6 +627,10 @@ export type EnumUserRoleFieldUpdateOperationsInput = {
 
 export type BoolFieldUpdateOperationsInput = {
   set?: boolean
+}
+
+export type NullableDateTimeFieldUpdateOperationsInput = {
+  set?: Date | string | null
 }
 
 export type NullableStringFieldUpdateOperationsInput = {
@@ -774,6 +844,9 @@ export type UserCreateWithoutDepartmentInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   studentProfile?: Prisma.StudentProfileCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileCreateNestedOneWithoutUserInput
   studentAppointments?: Prisma.AppointmentCreateNestedManyWithoutStudentInput
@@ -799,6 +872,9 @@ export type UserUncheckedCreateWithoutDepartmentInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   studentProfile?: Prisma.StudentProfileUncheckedCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedCreateNestedOneWithoutUserInput
   studentAppointments?: Prisma.AppointmentUncheckedCreateNestedManyWithoutStudentInput
@@ -854,6 +930,9 @@ export type UserScalarWhereInput = {
   departmentId?: Prisma.StringNullableFilter<"User"> | string | null
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
+  termsAcceptedAt?: Prisma.DateTimeNullableFilter<"User"> | Date | string | null
+  privacyAcceptedAt?: Prisma.DateTimeNullableFilter<"User"> | Date | string | null
+  consentVersion?: Prisma.StringNullableFilter<"User"> | string | null
 }
 
 export type UserCreateWithoutStudentProfileInput = {
@@ -865,6 +944,9 @@ export type UserCreateWithoutStudentProfileInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   department?: Prisma.DepartmentCreateNestedOneWithoutUsersInput
   counsellorProfile?: Prisma.CounsellorProfileCreateNestedOneWithoutUserInput
   studentAppointments?: Prisma.AppointmentCreateNestedManyWithoutStudentInput
@@ -891,6 +973,9 @@ export type UserUncheckedCreateWithoutStudentProfileInput = {
   departmentId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   counsellorProfile?: Prisma.CounsellorProfileUncheckedCreateNestedOneWithoutUserInput
   studentAppointments?: Prisma.AppointmentUncheckedCreateNestedManyWithoutStudentInput
   counsellorAppointments?: Prisma.AppointmentUncheckedCreateNestedManyWithoutCounsellorInput
@@ -931,6 +1016,9 @@ export type UserUpdateWithoutStudentProfileInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   department?: Prisma.DepartmentUpdateOneWithoutUsersNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUpdateOneWithoutUserNestedInput
   studentAppointments?: Prisma.AppointmentUpdateManyWithoutStudentNestedInput
@@ -957,6 +1045,9 @@ export type UserUncheckedUpdateWithoutStudentProfileInput = {
   departmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   counsellorProfile?: Prisma.CounsellorProfileUncheckedUpdateOneWithoutUserNestedInput
   studentAppointments?: Prisma.AppointmentUncheckedUpdateManyWithoutStudentNestedInput
   counsellorAppointments?: Prisma.AppointmentUncheckedUpdateManyWithoutCounsellorNestedInput
@@ -981,6 +1072,9 @@ export type UserCreateWithoutCounsellorProfileInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   department?: Prisma.DepartmentCreateNestedOneWithoutUsersInput
   studentProfile?: Prisma.StudentProfileCreateNestedOneWithoutUserInput
   studentAppointments?: Prisma.AppointmentCreateNestedManyWithoutStudentInput
@@ -1007,6 +1101,9 @@ export type UserUncheckedCreateWithoutCounsellorProfileInput = {
   departmentId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   studentProfile?: Prisma.StudentProfileUncheckedCreateNestedOneWithoutUserInput
   studentAppointments?: Prisma.AppointmentUncheckedCreateNestedManyWithoutStudentInput
   counsellorAppointments?: Prisma.AppointmentUncheckedCreateNestedManyWithoutCounsellorInput
@@ -1047,6 +1144,9 @@ export type UserUpdateWithoutCounsellorProfileInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   department?: Prisma.DepartmentUpdateOneWithoutUsersNestedInput
   studentProfile?: Prisma.StudentProfileUpdateOneWithoutUserNestedInput
   studentAppointments?: Prisma.AppointmentUpdateManyWithoutStudentNestedInput
@@ -1073,6 +1173,9 @@ export type UserUncheckedUpdateWithoutCounsellorProfileInput = {
   departmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   studentProfile?: Prisma.StudentProfileUncheckedUpdateOneWithoutUserNestedInput
   studentAppointments?: Prisma.AppointmentUncheckedUpdateManyWithoutStudentNestedInput
   counsellorAppointments?: Prisma.AppointmentUncheckedUpdateManyWithoutCounsellorNestedInput
@@ -1097,6 +1200,9 @@ export type UserCreateWithoutStudentSuspensionsInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   department?: Prisma.DepartmentCreateNestedOneWithoutUsersInput
   studentProfile?: Prisma.StudentProfileCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileCreateNestedOneWithoutUserInput
@@ -1123,6 +1229,9 @@ export type UserUncheckedCreateWithoutStudentSuspensionsInput = {
   departmentId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   studentProfile?: Prisma.StudentProfileUncheckedCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedCreateNestedOneWithoutUserInput
   studentAppointments?: Prisma.AppointmentUncheckedCreateNestedManyWithoutStudentInput
@@ -1152,6 +1261,9 @@ export type UserCreateWithoutCreatedSuspensionsInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   department?: Prisma.DepartmentCreateNestedOneWithoutUsersInput
   studentProfile?: Prisma.StudentProfileCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileCreateNestedOneWithoutUserInput
@@ -1178,6 +1290,9 @@ export type UserUncheckedCreateWithoutCreatedSuspensionsInput = {
   departmentId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   studentProfile?: Prisma.StudentProfileUncheckedCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedCreateNestedOneWithoutUserInput
   studentAppointments?: Prisma.AppointmentUncheckedCreateNestedManyWithoutStudentInput
@@ -1218,6 +1333,9 @@ export type UserUpdateWithoutStudentSuspensionsInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   department?: Prisma.DepartmentUpdateOneWithoutUsersNestedInput
   studentProfile?: Prisma.StudentProfileUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUpdateOneWithoutUserNestedInput
@@ -1244,6 +1362,9 @@ export type UserUncheckedUpdateWithoutStudentSuspensionsInput = {
   departmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   studentProfile?: Prisma.StudentProfileUncheckedUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedUpdateOneWithoutUserNestedInput
   studentAppointments?: Prisma.AppointmentUncheckedUpdateManyWithoutStudentNestedInput
@@ -1279,6 +1400,9 @@ export type UserUpdateWithoutCreatedSuspensionsInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   department?: Prisma.DepartmentUpdateOneWithoutUsersNestedInput
   studentProfile?: Prisma.StudentProfileUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUpdateOneWithoutUserNestedInput
@@ -1305,6 +1429,9 @@ export type UserUncheckedUpdateWithoutCreatedSuspensionsInput = {
   departmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   studentProfile?: Prisma.StudentProfileUncheckedUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedUpdateOneWithoutUserNestedInput
   studentAppointments?: Prisma.AppointmentUncheckedUpdateManyWithoutStudentNestedInput
@@ -1329,6 +1456,9 @@ export type UserCreateWithoutAvailabilitiesInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   department?: Prisma.DepartmentCreateNestedOneWithoutUsersInput
   studentProfile?: Prisma.StudentProfileCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileCreateNestedOneWithoutUserInput
@@ -1355,6 +1485,9 @@ export type UserUncheckedCreateWithoutAvailabilitiesInput = {
   departmentId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   studentProfile?: Prisma.StudentProfileUncheckedCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedCreateNestedOneWithoutUserInput
   studentAppointments?: Prisma.AppointmentUncheckedCreateNestedManyWithoutStudentInput
@@ -1395,6 +1528,9 @@ export type UserUpdateWithoutAvailabilitiesInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   department?: Prisma.DepartmentUpdateOneWithoutUsersNestedInput
   studentProfile?: Prisma.StudentProfileUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUpdateOneWithoutUserNestedInput
@@ -1421,6 +1557,9 @@ export type UserUncheckedUpdateWithoutAvailabilitiesInput = {
   departmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   studentProfile?: Prisma.StudentProfileUncheckedUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedUpdateOneWithoutUserNestedInput
   studentAppointments?: Prisma.AppointmentUncheckedUpdateManyWithoutStudentNestedInput
@@ -1445,6 +1584,9 @@ export type UserCreateWithoutStudentAppointmentsInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   department?: Prisma.DepartmentCreateNestedOneWithoutUsersInput
   studentProfile?: Prisma.StudentProfileCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileCreateNestedOneWithoutUserInput
@@ -1471,6 +1613,9 @@ export type UserUncheckedCreateWithoutStudentAppointmentsInput = {
   departmentId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   studentProfile?: Prisma.StudentProfileUncheckedCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedCreateNestedOneWithoutUserInput
   counsellorAppointments?: Prisma.AppointmentUncheckedCreateNestedManyWithoutCounsellorInput
@@ -1500,6 +1645,9 @@ export type UserCreateWithoutCounsellorAppointmentsInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   department?: Prisma.DepartmentCreateNestedOneWithoutUsersInput
   studentProfile?: Prisma.StudentProfileCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileCreateNestedOneWithoutUserInput
@@ -1526,6 +1674,9 @@ export type UserUncheckedCreateWithoutCounsellorAppointmentsInput = {
   departmentId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   studentProfile?: Prisma.StudentProfileUncheckedCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedCreateNestedOneWithoutUserInput
   studentAppointments?: Prisma.AppointmentUncheckedCreateNestedManyWithoutStudentInput
@@ -1566,6 +1717,9 @@ export type UserUpdateWithoutStudentAppointmentsInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   department?: Prisma.DepartmentUpdateOneWithoutUsersNestedInput
   studentProfile?: Prisma.StudentProfileUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUpdateOneWithoutUserNestedInput
@@ -1592,6 +1746,9 @@ export type UserUncheckedUpdateWithoutStudentAppointmentsInput = {
   departmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   studentProfile?: Prisma.StudentProfileUncheckedUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedUpdateOneWithoutUserNestedInput
   counsellorAppointments?: Prisma.AppointmentUncheckedUpdateManyWithoutCounsellorNestedInput
@@ -1627,6 +1784,9 @@ export type UserUpdateWithoutCounsellorAppointmentsInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   department?: Prisma.DepartmentUpdateOneWithoutUsersNestedInput
   studentProfile?: Prisma.StudentProfileUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUpdateOneWithoutUserNestedInput
@@ -1653,6 +1813,9 @@ export type UserUncheckedUpdateWithoutCounsellorAppointmentsInput = {
   departmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   studentProfile?: Prisma.StudentProfileUncheckedUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedUpdateOneWithoutUserNestedInput
   studentAppointments?: Prisma.AppointmentUncheckedUpdateManyWithoutStudentNestedInput
@@ -1677,6 +1840,9 @@ export type UserCreateWithoutSessionNotesInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   department?: Prisma.DepartmentCreateNestedOneWithoutUsersInput
   studentProfile?: Prisma.StudentProfileCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileCreateNestedOneWithoutUserInput
@@ -1703,6 +1869,9 @@ export type UserUncheckedCreateWithoutSessionNotesInput = {
   departmentId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   studentProfile?: Prisma.StudentProfileUncheckedCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedCreateNestedOneWithoutUserInput
   studentAppointments?: Prisma.AppointmentUncheckedCreateNestedManyWithoutStudentInput
@@ -1743,6 +1912,9 @@ export type UserUpdateWithoutSessionNotesInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   department?: Prisma.DepartmentUpdateOneWithoutUsersNestedInput
   studentProfile?: Prisma.StudentProfileUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUpdateOneWithoutUserNestedInput
@@ -1769,6 +1941,9 @@ export type UserUncheckedUpdateWithoutSessionNotesInput = {
   departmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   studentProfile?: Prisma.StudentProfileUncheckedUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedUpdateOneWithoutUserNestedInput
   studentAppointments?: Prisma.AppointmentUncheckedUpdateManyWithoutStudentNestedInput
@@ -1793,6 +1968,9 @@ export type UserCreateWithoutMoodLogsInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   department?: Prisma.DepartmentCreateNestedOneWithoutUsersInput
   studentProfile?: Prisma.StudentProfileCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileCreateNestedOneWithoutUserInput
@@ -1819,6 +1997,9 @@ export type UserUncheckedCreateWithoutMoodLogsInput = {
   departmentId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   studentProfile?: Prisma.StudentProfileUncheckedCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedCreateNestedOneWithoutUserInput
   studentAppointments?: Prisma.AppointmentUncheckedCreateNestedManyWithoutStudentInput
@@ -1859,6 +2040,9 @@ export type UserUpdateWithoutMoodLogsInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   department?: Prisma.DepartmentUpdateOneWithoutUsersNestedInput
   studentProfile?: Prisma.StudentProfileUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUpdateOneWithoutUserNestedInput
@@ -1885,6 +2069,9 @@ export type UserUncheckedUpdateWithoutMoodLogsInput = {
   departmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   studentProfile?: Prisma.StudentProfileUncheckedUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedUpdateOneWithoutUserNestedInput
   studentAppointments?: Prisma.AppointmentUncheckedUpdateManyWithoutStudentNestedInput
@@ -1909,6 +2096,9 @@ export type UserCreateWithoutJournalEntriesInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   department?: Prisma.DepartmentCreateNestedOneWithoutUsersInput
   studentProfile?: Prisma.StudentProfileCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileCreateNestedOneWithoutUserInput
@@ -1935,6 +2125,9 @@ export type UserUncheckedCreateWithoutJournalEntriesInput = {
   departmentId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   studentProfile?: Prisma.StudentProfileUncheckedCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedCreateNestedOneWithoutUserInput
   studentAppointments?: Prisma.AppointmentUncheckedCreateNestedManyWithoutStudentInput
@@ -1975,6 +2168,9 @@ export type UserUpdateWithoutJournalEntriesInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   department?: Prisma.DepartmentUpdateOneWithoutUsersNestedInput
   studentProfile?: Prisma.StudentProfileUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUpdateOneWithoutUserNestedInput
@@ -2001,6 +2197,9 @@ export type UserUncheckedUpdateWithoutJournalEntriesInput = {
   departmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   studentProfile?: Prisma.StudentProfileUncheckedUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedUpdateOneWithoutUserNestedInput
   studentAppointments?: Prisma.AppointmentUncheckedUpdateManyWithoutStudentNestedInput
@@ -2025,6 +2224,9 @@ export type UserCreateWithoutAuthoredAffirmationsInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   department?: Prisma.DepartmentCreateNestedOneWithoutUsersInput
   studentProfile?: Prisma.StudentProfileCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileCreateNestedOneWithoutUserInput
@@ -2051,6 +2253,9 @@ export type UserUncheckedCreateWithoutAuthoredAffirmationsInput = {
   departmentId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   studentProfile?: Prisma.StudentProfileUncheckedCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedCreateNestedOneWithoutUserInput
   studentAppointments?: Prisma.AppointmentUncheckedCreateNestedManyWithoutStudentInput
@@ -2080,6 +2285,9 @@ export type UserCreateWithoutReceivedAffirmationsInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   department?: Prisma.DepartmentCreateNestedOneWithoutUsersInput
   studentProfile?: Prisma.StudentProfileCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileCreateNestedOneWithoutUserInput
@@ -2106,6 +2314,9 @@ export type UserUncheckedCreateWithoutReceivedAffirmationsInput = {
   departmentId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   studentProfile?: Prisma.StudentProfileUncheckedCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedCreateNestedOneWithoutUserInput
   studentAppointments?: Prisma.AppointmentUncheckedCreateNestedManyWithoutStudentInput
@@ -2146,6 +2357,9 @@ export type UserUpdateWithoutAuthoredAffirmationsInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   department?: Prisma.DepartmentUpdateOneWithoutUsersNestedInput
   studentProfile?: Prisma.StudentProfileUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUpdateOneWithoutUserNestedInput
@@ -2172,6 +2386,9 @@ export type UserUncheckedUpdateWithoutAuthoredAffirmationsInput = {
   departmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   studentProfile?: Prisma.StudentProfileUncheckedUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedUpdateOneWithoutUserNestedInput
   studentAppointments?: Prisma.AppointmentUncheckedUpdateManyWithoutStudentNestedInput
@@ -2207,6 +2424,9 @@ export type UserUpdateWithoutReceivedAffirmationsInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   department?: Prisma.DepartmentUpdateOneWithoutUsersNestedInput
   studentProfile?: Prisma.StudentProfileUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUpdateOneWithoutUserNestedInput
@@ -2233,6 +2453,9 @@ export type UserUncheckedUpdateWithoutReceivedAffirmationsInput = {
   departmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   studentProfile?: Prisma.StudentProfileUncheckedUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedUpdateOneWithoutUserNestedInput
   studentAppointments?: Prisma.AppointmentUncheckedUpdateManyWithoutStudentNestedInput
@@ -2257,6 +2480,9 @@ export type UserCreateWithoutNotificationsInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   department?: Prisma.DepartmentCreateNestedOneWithoutUsersInput
   studentProfile?: Prisma.StudentProfileCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileCreateNestedOneWithoutUserInput
@@ -2283,6 +2509,9 @@ export type UserUncheckedCreateWithoutNotificationsInput = {
   departmentId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   studentProfile?: Prisma.StudentProfileUncheckedCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedCreateNestedOneWithoutUserInput
   studentAppointments?: Prisma.AppointmentUncheckedCreateNestedManyWithoutStudentInput
@@ -2323,6 +2552,9 @@ export type UserUpdateWithoutNotificationsInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   department?: Prisma.DepartmentUpdateOneWithoutUsersNestedInput
   studentProfile?: Prisma.StudentProfileUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUpdateOneWithoutUserNestedInput
@@ -2349,6 +2581,9 @@ export type UserUncheckedUpdateWithoutNotificationsInput = {
   departmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   studentProfile?: Prisma.StudentProfileUncheckedUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedUpdateOneWithoutUserNestedInput
   studentAppointments?: Prisma.AppointmentUncheckedUpdateManyWithoutStudentNestedInput
@@ -2373,6 +2608,9 @@ export type UserCreateWithoutAuditLogsInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   department?: Prisma.DepartmentCreateNestedOneWithoutUsersInput
   studentProfile?: Prisma.StudentProfileCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileCreateNestedOneWithoutUserInput
@@ -2399,6 +2637,9 @@ export type UserUncheckedCreateWithoutAuditLogsInput = {
   departmentId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
   studentProfile?: Prisma.StudentProfileUncheckedCreateNestedOneWithoutUserInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedCreateNestedOneWithoutUserInput
   studentAppointments?: Prisma.AppointmentUncheckedCreateNestedManyWithoutStudentInput
@@ -2439,6 +2680,9 @@ export type UserUpdateWithoutAuditLogsInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   department?: Prisma.DepartmentUpdateOneWithoutUsersNestedInput
   studentProfile?: Prisma.StudentProfileUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUpdateOneWithoutUserNestedInput
@@ -2465,6 +2709,9 @@ export type UserUncheckedUpdateWithoutAuditLogsInput = {
   departmentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   studentProfile?: Prisma.StudentProfileUncheckedUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedUpdateOneWithoutUserNestedInput
   studentAppointments?: Prisma.AppointmentUncheckedUpdateManyWithoutStudentNestedInput
@@ -2489,6 +2736,9 @@ export type UserCreateManyDepartmentInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  termsAcceptedAt?: Date | string | null
+  privacyAcceptedAt?: Date | string | null
+  consentVersion?: string | null
 }
 
 export type UserUpdateWithoutDepartmentInput = {
@@ -2500,6 +2750,9 @@ export type UserUpdateWithoutDepartmentInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   studentProfile?: Prisma.StudentProfileUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUpdateOneWithoutUserNestedInput
   studentAppointments?: Prisma.AppointmentUpdateManyWithoutStudentNestedInput
@@ -2525,6 +2778,9 @@ export type UserUncheckedUpdateWithoutDepartmentInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   studentProfile?: Prisma.StudentProfileUncheckedUpdateOneWithoutUserNestedInput
   counsellorProfile?: Prisma.CounsellorProfileUncheckedUpdateOneWithoutUserNestedInput
   studentAppointments?: Prisma.AppointmentUncheckedUpdateManyWithoutStudentNestedInput
@@ -2550,6 +2806,9 @@ export type UserUncheckedUpdateManyWithoutDepartmentInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  termsAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  privacyAcceptedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  consentVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 
@@ -2692,6 +2951,9 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   departmentId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  termsAcceptedAt?: boolean
+  privacyAcceptedAt?: boolean
+  consentVersion?: boolean
   department?: boolean | Prisma.User$departmentArgs<ExtArgs>
   studentProfile?: boolean | Prisma.User$studentProfileArgs<ExtArgs>
   counsellorProfile?: boolean | Prisma.User$counsellorProfileArgs<ExtArgs>
@@ -2720,6 +2982,9 @@ export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   departmentId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  termsAcceptedAt?: boolean
+  privacyAcceptedAt?: boolean
+  consentVersion?: boolean
   department?: boolean | Prisma.User$departmentArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -2733,6 +2998,9 @@ export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   departmentId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  termsAcceptedAt?: boolean
+  privacyAcceptedAt?: boolean
+  consentVersion?: boolean
   department?: boolean | Prisma.User$departmentArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -2746,9 +3014,12 @@ export type UserSelectScalar = {
   departmentId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  termsAcceptedAt?: boolean
+  privacyAcceptedAt?: boolean
+  consentVersion?: boolean
 }
 
-export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "password" | "role" | "isActive" | "departmentId" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
+export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "password" | "role" | "isActive" | "departmentId" | "createdAt" | "updatedAt" | "termsAcceptedAt" | "privacyAcceptedAt" | "consentVersion", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   department?: boolean | Prisma.User$departmentArgs<ExtArgs>
   studentProfile?: boolean | Prisma.User$studentProfileArgs<ExtArgs>
@@ -2803,6 +3074,9 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     departmentId: string | null
     createdAt: Date
     updatedAt: Date
+    termsAcceptedAt: Date | null
+    privacyAcceptedAt: Date | null
+    consentVersion: string | null
   }, ExtArgs["result"]["user"]>
   composites: {}
 }
@@ -3250,6 +3524,9 @@ export interface UserFieldRefs {
   readonly departmentId: Prisma.FieldRef<"User", 'String'>
   readonly createdAt: Prisma.FieldRef<"User", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"User", 'DateTime'>
+  readonly termsAcceptedAt: Prisma.FieldRef<"User", 'DateTime'>
+  readonly privacyAcceptedAt: Prisma.FieldRef<"User", 'DateTime'>
+  readonly consentVersion: Prisma.FieldRef<"User", 'String'>
 }
     
 

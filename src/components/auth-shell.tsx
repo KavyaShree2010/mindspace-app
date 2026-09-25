@@ -40,6 +40,12 @@ export function AuthShell({
           <Link href="/" className="text-sm font-semibold text-white/85 transition-colors hover:text-white hover:underline">
             Back to home
           </Link>
+          <nav aria-label="Legal" className="mt-3 flex flex-wrap justify-center gap-x-3 gap-y-1 text-xs text-white/65">
+            <Link href="/privacy" className="hover:text-white hover:underline">Privacy</Link>
+            <Link href="/terms" className="hover:text-white hover:underline">Terms</Link>
+            <Link href="/cookies" className="hover:text-white hover:underline">Cookies</Link>
+            <Link href="/refunds" className="hover:text-white hover:underline">Refunds</Link>
+          </nav>
         </div>
       </div>
     </main>

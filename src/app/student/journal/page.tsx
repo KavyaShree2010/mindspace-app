@@ -33,7 +33,7 @@ export default async function JournalPage({
 
   return (
     <div className="flex flex-col gap-6">
-      <PageTitle sub="Private to you — nobody else can read these.">Journal</PageTitle>
+      <PageTitle sub="Your entries are protected by the account roles described in the Privacy Policy.">Journal</PageTitle>
 
       {/* Full-width search field, magnifier inside. */}
       <form method="GET" role="search">

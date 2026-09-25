@@ -50,13 +50,13 @@ const previewRows = [
     icon: SmileIcon,
     label: "Mood check-in",
     value: "Calm",
-    detail: "Private to you",
+    detail: "In your account",
   },
   {
     icon: JournalIcon,
     label: "Journal",
     value: "Locked",
-    detail: "Never shared",
+    detail: "Role-limited access",
   },
 ];
 

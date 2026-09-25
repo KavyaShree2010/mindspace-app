@@ -520,10 +520,6 @@ export type CounsellorProfileUncheckedUpdateOneWithoutUserNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.CounsellorProfileUpdateToOneWithWhereWithoutUserInput, Prisma.CounsellorProfileUpdateWithoutUserInput>, Prisma.CounsellorProfileUncheckedUpdateWithoutUserInput>
 }
 
-export type NullableDateTimeFieldUpdateOperationsInput = {
-  set?: Date | string | null
-}
-
 export type CounsellorProfileCreateWithoutUserInput = {
   id?: string
   contactNumber?: string | null

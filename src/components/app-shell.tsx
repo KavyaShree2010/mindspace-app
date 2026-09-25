@@ -4,6 +4,7 @@ import { BottomNav, SideNav, type NavItem } from "@/components/app-nav";
 import { BackButton } from "@/components/ui/back-button";
 import { AppAssistant } from "@/features/assistant/AppAssistant";
 import type { SessionPayload } from "@/lib/session";
+import Link from "next/link";
 
 export function AppShell({
   session,
@@ -64,6 +65,12 @@ export function AppShell({
         <main className="mx-auto w-full max-w-[1180px] flex-1 bg-page px-4 pb-24 pt-5 sm:px-6 lg:pb-8 lg:pt-7">
           <BackButton home={home} />
           {children}
+          <nav aria-label="Legal" className="mt-10 flex flex-wrap gap-x-4 gap-y-2 border-t border-line pt-4 text-xs text-ink-muted">
+            <Link href="/privacy" className="hover:text-ink hover:underline">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-ink hover:underline">Terms</Link>
+            <Link href="/cookies" className="hover:text-ink hover:underline">Cookies</Link>
+            <Link href="/refunds" className="hover:text-ink hover:underline">Refund Policy</Link>
+          </nav>
         </main>
       </div>
 

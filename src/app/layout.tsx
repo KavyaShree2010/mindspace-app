@@ -3,6 +3,7 @@ import { cookies } from "next/headers";
 import { Inter } from "next/font/google";
 import { THEME_COOKIE, isTheme } from "@/features/theme/theme";
 import { PwaBootstrap } from "@/components/pwa/PwaBootstrap";
+import { CookieConsent } from "@/components/cookie-consent";
 import "./globals.css";
 
 const inter = Inter({
@@ -34,6 +35,7 @@ export default async function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <PwaBootstrap />
+        <CookieConsent />
         {children}
       </body>
     </html>
